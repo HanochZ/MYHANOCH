@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hanoch's Game Station - A collection of fun and engaging games curated by Hanoch.">
+    <link rel="canonical" href="https://www.myhanoch.com" />
+    <title>Hanoch's Game Station - Play Fun Games Online</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .game-iframe {
+            width: 100%;
+            height: 600px;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #6EE7B7, #3B82F6);
+        }
+        .hover-scale {
+            transition: transform 0.2s ease-in-out;
+        }
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <!-- Navigation Menu -->
+    <nav class="gradient-bg shadow">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold text-white">Hanoch's Game Station</div>
+                <div class="space-x-4">
+                    <a href="#action" class="text-white hover:text-gray-200">Action</a>
+                    <a href="#puzzle" class="text-white hover:text-gray-200">Puzzle</a>
+                    <a href="#strategy" class="text-white hover:text-gray-200">Strategy</a>
+                    <a href="#sports" class="text-white hover:text-gray-200">Sports</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-6xl mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold mb-8 text-center gradient-text">Welcome to Hanoch's Game Station</h1>
+
+        <!-- Search Box -->
+        <div class="mb-8">
+            <input type="text" placeholder="Search for games..." class="w-full p-2 border border-gray-300 rounded">
+        </div>
+
+        <!-- Game Categories -->
+        <section id="action" class="mb-12">
+            <h2 class="text-2xl font-semibold mb-4">Action Games</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Game Template -->
+                <div class="bg-white p-4 rounded shadow hover-scale">
+                    <h3 class="text-xl font-bold mb-2">Game Title 1</h3>
+                    <p class="text-gray-700 mb-4">A short description of the game.</p>
+                    <iframe src="https://example.com/game1" class="game-iframe border-none rounded"></iframe>
+                    <p class="text-gray-600 mt-4">Controls: Use arrow keys to move.</p>
+                </div>
+                <!-- Repeat for other games -->
+            </div>
+        </section>
+
+        <section id="puzzle" class="mb-12">
+            <h2 class="text-2xl font-semibold mb-4">Puzzle Games</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Game Template -->
+                <div class="bg-white p-4 rounded shadow hover-scale">
+                    <h3 class="text-xl font-bold mb-2">Game Title 2</h3>
+                    <p class="text-gray-700 mb-4">A short description of the game.</p>
+                    <iframe src="https://example.com/game2" class="game-iframe border-none rounded"></iframe>
+                    <p class="text-gray-600 mt-4">Controls: Click to interact.</p>
+                </div>
+                <!-- Repeat for other games -->
+            </div>
+        </section>
+
+        <!-- Repeat for other categories -->
+    </div>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-6 mt-12">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p>&copy; 2024 Hanoch's Game Station. All rights reserved.</p>
+            <p class="mt-2">Follow me on <a href="#" class="underline">Twitter</a> | <a href="#" class="underline">Instagram</a></p>
+        </div>
+    </footer>
+</body>
+</html>
