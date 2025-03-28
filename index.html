@@ -27,6 +27,9 @@
             line-height: 1.6;
             overflow-x: hidden;
             position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         body::before {
@@ -48,11 +51,12 @@
             padding: 2rem;
             position: relative;
             z-index: 1;
+            flex: 1;
         }
 
         header {
             background: rgba(230, 184, 182, 0.8); /* 半透明灰粉色 */
-            padding: 1.5rem;
+            padding: 1rem; /* 缩小标题行高度 */
             margin-bottom: 2rem;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
@@ -61,17 +65,18 @@
         }
 
         h1 {
-            color: var(--warm-gray);
+            color: var(--warm-gray); /* 标题颜色 */
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2rem; /* 缩小字体 */
             font-weight: 600;
             letter-spacing: 1px;
+            margin: 0;
         }
 
         .button-container {
             position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
+            top: 1rem;
+            right: 1rem;
             display: flex;
             gap: 1rem;
         }
@@ -93,16 +98,16 @@
 
         .notification {
             position: fixed;
-            top: 5rem; /* 下移通知框，避免与按钮重叠 */
+            top: 5rem;
             right: 1rem;
-            background: rgba(230, 184, 182, 0.95); /* 加深颜色 */
+            background: rgba(156, 174, 169, 0.95); /* 通知框颜色 */
             padding: 1rem;
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(5px);
             z-index: 1000;
             display: none;
-            color: var(--warm-gray);
+            color: #ffffff; /* 通知框文字颜色 */
             font-weight: bold;
         }
 
@@ -115,7 +120,7 @@
         .clock {
             font-size: 3rem;
             font-weight: bold;
-            color: var(--dusty-pink);
+            color: #000000; /* 日期时间颜色 */
         }
 
         .quote {
@@ -178,29 +183,28 @@
 
         footer {
             text-align: center;
-            padding: 1.5rem;
+            padding: 1rem;
             background: rgba(255, 255, 255, 0.8);
             border-radius: 10px;
             backdrop-filter: blur(5px);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
             width: 100%;
             max-width: 1200px;
-            z-index: 100;
+            margin: 0 auto;
+            margin-top: auto;
         }
 
         footer p {
             color: var(--warm-gray);
             font-size: 0.9rem;
             margin: 0;
+            display: inline-block;
+            margin-right: 1rem;
         }
 
         .contact-info {
-            margin-top: 1rem;
             font-size: 0.9rem;
+            display: inline-block;
         }
 
         @media (max-width: 768px) {
@@ -213,12 +217,17 @@
             }
 
             .button-container {
-                top: 1rem;
-                right: 1rem;
+                top: 0.5rem;
+                right: 0.5rem;
             }
 
             .notification {
-                top: 4rem; /* 移动端下移通知框 */
+                top: 4rem;
+            }
+
+            footer p, .contact-info {
+                display: block;
+                margin: 0.5rem 0;
             }
         }
     </style>
@@ -256,46 +265,6 @@
                 <ul class="link-list">
                     <li><a href="https://github.com" target="_blank">GitHub</a></li>
                     <li><a href="https://gitlab.com" target="_blank">GitLab</a></li>
-                    <li><a href="https://gitee.com" target="_blank">Gitee</a></li>
-                    <li><a href="https://bitbucket.org" target="_blank">Bitbucket</a></li>
-                    <li><a href="https://sourceforge.net" target="_blank">SourceForge</a></li>
-                </ul>
-            </div>
-
-            <!-- 工具库 -->
-            <div class="card">
-                <h2>🧰 工具库</h2>
-                <ul class="link-list">
-                    <li><a href="https://www.npmjs.com" target="_blank">NPM</a></li>
-                    <li><a href="https://pypi.org" target="_blank">PyPI</a></li>
-                    <li><a href="https://hub.docker.com" target="_blank">Docker Hub</a></li>
-                    <li><a href="https://mvnrepository.com" target="_blank">Maven Central</a></li>
-                    <li><a href="https://nuget.org" target="_blank">NuGet</a></li>
-                </ul>
-            </div>
-
-            <!-- 技术社区 -->
-            <div class="card">
-                <h2>👥 技术社区</h2>
-                <ul class="link-list">
-                    <li><a href="https://juejin.cn" target="_blank">掘金</a></li>
-                    <li><a href="https://www.csdn.net" target="_blank">CSDN</a></li>
-                    <li><a href="https://www.reddit.com/r/programming" target="_blank">Reddit编程</a></li>
-                    <li><a href="https://dev.to" target="_blank">DEV Community</a></li>
-                    <li><a href="https://www.v2ex.com" target="_blank">V2EX</a></li>
-                </ul>
-            </div>
-
-            <!-- 在线工具 -->
-            <div class="card">
-                <h2>🔧 在线工具</h2>
-                <ul class="link-list">
-                    <li><a href="https://jsonformatter.org" target="_blank">JSON格式化</a></li>
-                    <li><a href="https://beautifier.io" target="_blank">代码美化</a></li>
-                    <li><a href="https://regex101.com" target="_blank">正则测试</a></li>
-                    <li><a href="https://www.base64decode.org" target="_blank">Base64编解码</a></li>
-                    <li><a href="https://www.online-toolz.com" target="_blank">综合工具集</a></li>
-                </ul>
             </div>
         </div>
     </div>
@@ -303,8 +272,7 @@
     <footer>
         <p>@Hanoch 2024</p>
         <div class="contact-info">
-            电话：+86 18120779776<br>
-            微信：zhftlws
+            电话：+86 18120779776 | 微信：zhftlws
         </div>
     </footer>
 
