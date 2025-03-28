@@ -265,6 +265,43 @@
                 <ul class="link-list">
                     <li><a href="https://github.com" target="_blank">GitHub</a></li>
                     <li><a href="https://gitlab.com" target="_blank">GitLab</a></li>
+                </ul>
+            </div>
+
+            <!-- 工具导航 -->
+            <div class="card">
+                <h2>🛠️ 工具导航</h2>
+                <ul class="link-list">
+                    <li><a href="https://www.jetbrains.com" target="_blank">JetBrains</a></li>
+                    <li><a href="https://www.sublimetext.com" target="_blank">Sublime Text</a></li>
+                    <li><a href="https://code.visualstudio.com" target="_blank">VS Code</a></li>
+                    <li><a href="https://www.postman.com" target="_blank">Postman</a></li>
+                    <li><a href="https://www.figma.com" target="_blank">Figma</a></li>
+                </ul>
+            </div>
+
+            <!-- 设计资源 -->
+            <div class="card">
+                <h2>🎨 设计资源</h2>
+                <ul class="link-list">
+                    <li><a href="https://www.behance.net" target="_blank">Behance</a></li>
+                    <li><a href="https://dribbble.com" target="_blank">Dribbble</a></li>
+                    <li><a href="https://www.pinterest.com" target="_blank">Pinterest</a></li>
+                    <li><a href="https://www.canva.com" target="_blank">Canva</a></li>
+                    <li><a href="https://www.unsplash.com" target="_blank">Unsplash</a></li>
+                </ul>
+            </div>
+
+            <!-- 社区论坛 -->
+            <div class="card">
+                <h2>🌐 社区论坛</h2>
+                <ul class="link-list">
+                    <li><a href="https://www.v2ex.com" target="_blank">V2EX</a></li>
+                    <li><a href="https://www.zhihu.com" target="_blank">知乎</a></li>
+                    <li><a href="https://www.reddit.com" target="_blank">Reddit</a></li>
+                    <li><a href="https://www.csdn.net" target="_blank">CSDN</a></li>
+                    <li><a href="https://www.quora.com" target="_blank">Quora</a></li>
+                </ul>
             </div>
         </div>
     </div>
@@ -293,13 +330,16 @@
         const leafBtn = document.getElementById('leaf-btn');
         const clockMode = document.getElementById('clock-mode');
         const container = document.querySelector('.container');
+        const footer = document.querySelector('footer');
         leafBtn.addEventListener('click', () => {
             if (clockMode.style.display === 'block') {
                 clockMode.style.display = 'none';
                 container.style.display = 'block';
+                footer.style.display = 'block';
             } else {
                 clockMode.style.display = 'block';
                 container.style.display = 'none';
+                footer.style.display = 'none';
                 updateClock();
                 updateQuote();
             }
