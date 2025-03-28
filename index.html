@@ -93,9 +93,8 @@
 
         .notification {
             position: fixed;
-            top: 20%;
-            left: 50%;
-            transform: translateX(-50%);
+            top: 1rem;
+            right: 1rem;
             background: var(--card-bg);
             padding: 1rem;
             border-radius: 10px;
@@ -108,7 +107,7 @@
         .clock-mode {
             display: none;
             text-align: center;
-            margin-top: 20%;
+            margin-top: 10%;
         }
 
         .clock {
@@ -314,19 +313,13 @@
         const leafBtn = document.getElementById('leaf-btn');
         const clockMode = document.getElementById('clock-mode');
         const container = document.querySelector('.container');
-        const header = document.querySelector('header');
-        const footer = document.querySelector('footer');
         leafBtn.addEventListener('click', () => {
             if (clockMode.style.display === 'block') {
                 clockMode.style.display = 'none';
                 container.style.display = 'block';
-                header.style.display = 'block';
-                footer.style.display = 'block';
             } else {
                 clockMode.style.display = 'block';
                 container.style.display = 'none';
-                header.style.display = 'none';
-                footer.style.display = 'none';
                 updateClock();
                 updateQuote();
             }
